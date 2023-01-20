@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class FlightTest {
     private Flight flight;
+    private Flight flightWithLowCapacityPlane;
     private Pilot pilotBob;
     private Pilot pilotJanet;
 
@@ -32,6 +33,7 @@ public class FlightTest {
     public void before(){
         //flight
         flight = new Flight("BA007", "EDI", "DXB", "17:05", Plane.A320);
+        flightWithLowCapacityPlane = new Flight("0001", "EDI", "EDI", "12:00", Plane.SMALLPLANE);
 
         //Pilots
         pilotBob = new Pilot("Bob", "Captain", "2689");
@@ -111,10 +113,36 @@ public class FlightTest {
 
 
     @Test
-    public void crewMembers(){
+    public void canAddCrewMembersToFlight(){
         flight.addCrewMemberToFlight(crewMemberLily);
         assertEquals(1, flight.getCrewMemberCount());
     }
 
+    @Test
+    public void passengerCountStartsAt0(){
+        assertEquals(0, flight.getPassengerCount());
+    }
+
+    @Test
+    public void canAddPassengerToFlight(){
+        flight.addPassengerToFlight(passenger1);
+        assertEquals(1, flight.getPassengerCount());
+    }
+
+    @Test
+    public void cannotAddPassengerToFlightDueToCapacity(){
+        flightWithLowCapacityPlane.addPassengerToFlight(passenger1);
+        flightWithLowCapacityPlane.addPassengerToFlight(passenger2);
+        flightWithLowCapacityPlane.addPassengerToFlight(passenger3);
+        assertEquals(2, flightWithLowCapacityPlane.getPassengerCount());
+    }
+
+    @Test
+    public void canGetNumberOfAvailableSeats(){
+        flight.addPassengerToFlight(passenger1);
+        flight.addPassengerToFlight(passenger2);
+        flight.addPassengerToFlight(passenger3);
+        assertEquals(147, flight.countAvailableSeats());
+    }
 
 }

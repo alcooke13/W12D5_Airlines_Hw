@@ -2,7 +2,8 @@ public enum Plane {
 
     B737("B737", 150, 6000),
     ATR72("ATR72", 72, 2900),
-    A320("A320", 150, 6000);
+    A320("A320", 150, 6000),
+    SMALLPLANE("Test Plane", 2, 100);
 
     private final String planeType;
     private final int capacity;

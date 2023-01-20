@@ -74,5 +74,22 @@ public class Flight {
         this.listOfCrewMembers.add(crewToAdd);
     }
 
+    public int getPassengerCount(){
+        return this.listOfPassengers.size();
+    }
+
+    public void addPassengerToFlight(Passenger passengerToAdd){
+        int totalCapacity = this.getPlaneCapacity();
+        if(totalCapacity - this.getPassengerCount() > 0){
+            listOfPassengers.add(passengerToAdd);
+        }
+    }
+
+    public int countAvailableSeats(){
+        int totalCapacity = this.getPlaneCapacity();
+        return totalCapacity - this.getPassengerCount();
+    }
+
+
 
 }
