@@ -55,5 +55,40 @@ public class FlightTest {
     public void canGetFlightNumber(){
         assertEquals("BA007", flight.getFlightNumber());
     }
-    
+
+    @Test
+    public void canGetDepartureAirport(){
+        assertEquals("EDI", flight.getDepartureAirport());
+    }
+
+    @Test
+    public void canGetDestinationAirport(){
+        assertEquals("DXB", flight.getDestinationAirport());
+    }
+
+    @Test
+    public void canGetDepartureTime(){
+        assertEquals("17:05", flight.getDepartureTime());
+    }
+
+    @Test
+    public void canGetEnumPlane(){
+        assertEquals(Plane.A320, flight.getPlane());
+    }
+
+    @Test
+    public void canGetPlaneType(){
+        assertEquals("A320", flight.getPlaneType());
+    }
+
+    @Test
+    public void canGetPlaneCapacity(){
+        assertEquals(150, flight.getPlaneCapacity());
+    }
+
+    @Test
+    public void canGetPlaneWeight(){
+        assertEquals(6000, flight.getPlaneWeight());
+    }
+
 }

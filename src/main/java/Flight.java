@@ -23,4 +23,39 @@ public class Flight {
 
     }
 
+    public String getFlightNumber(){
+        return this.flightNumber;
+    }
+
+    public String getDepartureAirport(){
+        return this.departureAirport;
+    }
+
+    public String getDestinationAirport(){
+        return this.destinationAirport;
+    }
+
+    public String getDepartureTime(){
+        return this.departureTime;
+    }
+
+    public Plane getPlane(){
+        return this.plane;
+    }
+
+    public String getPlaneType(){
+        Plane airplane = this.getPlane();
+        return airplane.getPlaneType();
+    }
+
+    public int getPlaneCapacity(){
+        Plane airplane = this.getPlane();
+        return airplane.getPlaneTotalCapacity();
+    }
+
+    public int getPlaneWeight(){
+        Plane airplane = this.getPlane();
+        return airplane.getPlaneWeight();
+    }
+
 }
