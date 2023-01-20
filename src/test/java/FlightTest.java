@@ -91,4 +91,30 @@ public class FlightTest {
         assertEquals(6000, flight.getPlaneWeight());
     }
 
+
+    @Test
+    public void pilotCountStartsAt0(){
+        assertEquals(0, flight.getPilotCount());
+    }
+
+    @Test
+    public void canAddPilotToFlight(){
+        flight.addPilotToFlight(pilotJanet);
+        assertEquals(1, flight.getPilotCount());
+
+    }
+
+    @Test
+    public void crewMemberCountStartsAt0(){
+        assertEquals(0, flight.getCrewMemberCount());
+    }
+
+
+    @Test
+    public void crewMembers(){
+        flight.addCrewMemberToFlight(crewMemberLily);
+        assertEquals(1, flight.getCrewMemberCount());
+    }
+
+
 }

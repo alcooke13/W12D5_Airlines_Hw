@@ -58,4 +58,21 @@ public class Flight {
         return airplane.getPlaneWeight();
     }
 
+    public int getPilotCount(){
+        return this.listOfPilots.size();
+    }
+
+    public void addPilotToFlight(Pilot pilotToAdd){
+        this.listOfPilots.add(pilotToAdd);
+    }
+
+    public int getCrewMemberCount(){
+        return this.listOfCrewMembers.size();
+    }
+
+    public void addCrewMemberToFlight(CrewMember crewToAdd){
+        this.listOfCrewMembers.add(crewToAdd);
+    }
+
+
 }
